@@ -1,0 +1,118 @@
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.controls label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.controls input {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+h1 {
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.character-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.character-table thead {
+    background-color: #f2f2f2;
+}
+
+.character-table th,
+.character-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.character-table th {
+    position: relative;
+    padding: 10px;
+}
+
+.character-table th input {
+    width: calc(100% - 20px);
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.sort-icon {
+    margin-left: 10px; /* Adjust the margin as needed */
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    position: absolute; /* Position the sort icon absolutely */
+    right: 10px; /* Align to the right within the header */
+    top: 30%; /* Vertically center */
+    transform: translateY(-50%); /* Center the icon vertically */
+    cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+}
+
+.character-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.character-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.character-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #077784;
+    color: white;
+    text-transform: uppercase;
+}
+
+
+.character-details {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.character-details img {
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.character-details div {
+    text-align: left;
+}
+
+.character-details h2 {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.error-message {
+    color: red;
+    font-size: 16px;
+    margin: 10px 0;
+}
