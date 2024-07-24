@@ -33,6 +33,14 @@ const CharacterTable = () => {
     const indexOfLastCharacter = currentPage * charactersPerPage;
     const indexOfFirstCharacter = indexOfLastCharacter - charactersPerPage;
 
+    // Function to get value for sorting or filtering based on key (handles nested properties)
+    const getValueForSort = (obj, key) => {
+        if (key.includes('.')) {
+            return key.split('.').reduce((o, i) => o && o[i], obj);
+        }
+        return obj[key];
+    };
+
     // Fetch all characters from the API when the component mounts
     useEffect(() => {
         const fetchAllCharacters = async () => {
@@ -114,14 +122,6 @@ const CharacterTable = () => {
             return character[key].toString().toLowerCase().includes(value);
         });
     });
-
-    // Function to get value for sorting or filtering based on key (handles nested properties)
-    const getValueForSort = (obj, key) => {
-        if (key.includes('.')) {
-            return key.split('.').reduce((o, i) => o && o[i], obj);
-        }
-        return obj[key];
-    };
 
     // Paginated characters
     const currentCharacters = filteredCharacters.slice(indexOfFirstCharacter, indexOfLastCharacter);
