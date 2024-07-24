@@ -3,7 +3,7 @@ import React from 'react';
 // CharacterDetails component to display details of the selected character
 const CharacterDetails = ({ character }) => {
   // If no character is selected, show a prompt message
-  if (!character) return <p>Click on a row to see details of the character</p>;
+  if (!character) return <p></p>;
 
   // Render the details of the selected character
   return (

@@ -1,8 +1,9 @@
 import React from "react";
+import "./Pagination.css"; // Import custom CSS
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
-
+    
     return (
         <div className="pagination">
             {pageNumbers.map((page) => (

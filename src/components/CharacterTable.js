@@ -5,7 +5,7 @@ import Pagination from "./Pagination"; // Import Pagination component
 const CharacterTable = () => {
     // State to store the list of characters
     const [characters, setCharacters] = useState([]);
-    
+
     // State to store filter values
     const [filters, setFilters] = useState({
         id: "",
@@ -14,6 +14,10 @@ const CharacterTable = () => {
         species: "",
         gender: ""
     });
+
+    const [showInitialMessage, setShowInitialMessage] = useState(true);
+
+
 
     // State to store the number of rows to display per page
     const [rowsPerPage, setRowsPerPage] = useState(20);
@@ -43,6 +47,9 @@ const CharacterTable = () => {
 
     // Fetch all characters from the API when the component mounts
     useEffect(() => {
+
+        
+        
         const fetchAllCharacters = async () => {
             let allCharacters = [];
             let page = 1;
@@ -75,6 +82,8 @@ const CharacterTable = () => {
         });
         setCurrentPage(1); // Reset to first page when filters change
     };
+
+
 
     // Handle sorting by column
     const handleSort = (key) => {
@@ -132,6 +141,7 @@ const CharacterTable = () => {
     // Handle page change
     const onPageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
+        setSelectedCharacter(null);
     };
 
     // Validate input for rows per page
@@ -148,7 +158,9 @@ const CharacterTable = () => {
     // Handle row click to select a character
     const handleRowClick = (character) => {
         setSelectedCharacter(character);
+        setShowInitialMessage(false); // Hide the initial message
     };
+
 
     return (
         <div className="container">
@@ -208,6 +220,9 @@ const CharacterTable = () => {
                     )}
                 </tbody>
             </table>
+            {!selectedCharacter && (
+                <p>Click on a row to see details of the character</p>
+            )}
             {/* Pagination component */}
             <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
             {/* Selected character details section */}

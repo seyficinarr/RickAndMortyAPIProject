@@ -1,0 +1,31 @@
+/* Pagination container styles */
+.pagination {
+    display: grid; /* Grid düzeni kullan */
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); /* Düğmeler için dinamik sütunlar */
+    gap: 10px; /* Düğmeler arasındaki boşluk */
+    justify-content: center; /* Düğmeleri yatayda ortala */
+    margin-top: 20px; /* Üstten boşluk */
+}
+
+/* Page button styles */
+.pagination button {
+    background-color: #f0f0f0; /* Arka plan rengi */
+    border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+    border-radius: 4px; /* Kenarların yuvarlatılması */
+    padding: 8px 12px; /* İç boşluk */
+    cursor: pointer; /* İmleç işareti */
+    font-size: 16px; /* Yazı boyutu */
+}
+
+/* Active page button style */
+.pagination button.active {
+    background-color: #007bff; /* Aktif sayfa düğmesinin arka plan rengi */
+    color: white; /* Aktif düğmedeki yazının rengi */
+    border-color: #007bff; /* Aktif düğmenin kenarlık rengi */
+}
+
+/* Hover effect */
+.pagination button:hover {
+    background-color: #0b0000; /* Düğmelere fareyle üzerine gelindiğinde arka plan rengi */
+    color: white;
+}
